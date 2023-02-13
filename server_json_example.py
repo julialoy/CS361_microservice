@@ -28,7 +28,7 @@ def generate_numbers():
 
 def run_server():
     """
-    Runs a server utilizing PyMQ (ZeroMQ)'s socket API to handle requests from
+    Runs a server utilizing PyZMQ (ZeroMQ)'s socket API to handle requests from
     clients. Sends a payload of 3 unique pseudorandom integers from
     function generate_numbers(). Payload is sent as a JSON object.
 

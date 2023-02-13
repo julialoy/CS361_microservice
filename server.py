@@ -7,7 +7,7 @@ PORT = 5555     # Change this value if a different port number is desired
 
 def generate_numbers():
     """
-    Generates and returns 3 pseudorandom integers between 1 and 500 (inclusive).
+    Generates and returns 3 pseudorandom integers between 1 and 500 (inclusive)
 
     Makes use of Python's random module.
 
@@ -32,9 +32,9 @@ def generate_numbers():
 
 def run_server():
     """
-    Runs a server utilizing PyMQ (ZeroMQ)'s socket API to handle requests from
+    Runs a server utilizing PyZMQ (ZeroMQ)'s socket API to handle requests from
     clients. Sends a payload of 3 unique pseudorandom integers from
-    function generate_numbers(). Payload is sent as a byte string.
+    function generate_numbers(). Payload is sent as a sequence of bytes.
 
     :params: none
     :return: none

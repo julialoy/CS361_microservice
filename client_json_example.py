@@ -12,7 +12,13 @@ def run_client():
     from a server. Expects server data to be a JSON object. Decodes and prints
     data received from server.
 
+    Utilizes connect_to_server() function to send and receive data from server.
+
     Utilizes Python's json module for decoding JSON.
+
+    connect_to_server():
+        - takes one optional argument: a string to send to the server
+        - returns data from server as JSON object
 
     :params: none
     :return: none
@@ -45,11 +51,11 @@ def run_client():
 
 def connect_to_server(client_msg=MSG):
     """
-    Connects to a server via PyMQ (ZeroMQ)'s socket API.
-    Sends a message (as byte string) to server indicating it is ready for data
-    and receives server data as a JSON object.
+    Connects to a server via PyZMQ (ZeroMQ)'s socket API.
+    Sends a message (as sequence of bytes) to server indicating it is ready for
+    data and receives server data as a JSON object.
 
-    Returns the JSON object.
+    Returns a JSON object.
 
     :params: string: default is empty string to request data, sends 'q' to
                      tell server client is terminating the connection

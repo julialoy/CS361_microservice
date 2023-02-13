@@ -1,4 +1,4 @@
-# Client Example --- String example
+# Client Example --- Bytes/String example
 import zmq
 
 MSG = ""    # Serves as dummy message for alerting server client is ready
@@ -7,8 +7,8 @@ USER_MSG = "Enter 'n' to see 3 random numbers. Enter 'q' to quit: "
 
 def parse_data(d):
     """
-    Attempts to turn string into a list of integers.
-    Assumes parameter is a whitespace delimited string.
+    Attempts to manipulate string into a list of integers.
+    Assumes parameter is a string. Whitespace used as delimiter.
 
     :params: d: data as string
     :return: list of 3 integers
@@ -24,8 +24,14 @@ def parse_data(d):
 def run_client():
     """
     Example client that on input from user will handle requesting data
-    from a server. Expects server data to be a Python string. Prints
-    data received from server.
+    from a server. Utilizes function connect_to_server() to send and retrieve
+    data. Prints the data received from connect_to_server().
+
+    connect_to_server():
+       - takes one optional argument: a string to send to the
+           server
+       - returns data from server as string
+
 
     :params: none
     :return: none
@@ -58,11 +64,11 @@ def run_client():
 
 def connect_to_server(client_msg=MSG):
     """
-    Connects to a server via PyMQ (ZeroMQ)'s socket API.
+    Connects to a server via PyZMQ (ZeroMQ)'s socket API.
     Sends a message to server indicating it is ready for data and receives
-    server data as a byte string.
+    server data as a sequence of bytes.
 
-    Returns the decoded data.
+    Returns the decoded data as a string.
 
     :params: string: default is empty string to request data, sends 'q' to
                      tell server client is terminating the connection
