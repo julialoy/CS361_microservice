@@ -1,5 +1,5 @@
 # CS361 Microservice Examples
-Repo contains examples of two different approaches to the same basic microservice. The microservice provides 3 unique pseudorandom numbers to a client upon request. Python files require [Python]("https://www.python.org/downloads/") and [PyZMQ]("https://github.com/zeromq/pyzmq#building-and-installation") to run. The Node.js server.js file requires [Node.js](https://nodejs.org/en/download/) and [ZeroMQ](https://zeromq.org/download/).
+Repo contains examples of two different approaches to the same basic microservice. The microservice provides 3 unique pseudorandom numbers to a client upon request. Python files require [Python](https://www.python.org/downloads/) and [PyZMQ](https://github.com/zeromq/pyzmq#building-and-installation) to run. The Node.js server.js file requires [Node.js](https://nodejs.org/en/download/) and [ZeroMQ](https://zeromq.org/download/).
 
 ---
 ### Server.py: Overview: Data as bytes-like object
